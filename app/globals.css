@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-800 { animation-delay: 800ms; }
+  .animation-delay-1000 { animation-delay: 1000ms; }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 235 50% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 235 50% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 235 50% 12%;
+    --primary: 238 50% 31%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 238 30% 96%;
+    --secondary-foreground: 238 50% 10%;
+    --muted: 238 20% 96%;
+    --muted-foreground: 235 15% 46%;
+    --accent: 238 50% 31%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 235 15% 90%;
+    --input: 235 15% 90%;
+    --ring: 238 50% 31%;
+    --chart-1: 238 50% 31%;
+    --chart-2: 212 95% 68%;
+    --chart-3: 199 89% 48%;
+    --chart-4: 187 85% 53%;
+    --chart-5: 198 93% 60%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 235 50% 12%;
+    --sidebar-primary: 238 50% 31%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 238 30% 96%;
+    --sidebar-accent-foreground: 238 50% 10%;
+    --sidebar-border: 238 15% 91%;
+    --sidebar-ring: 238 50% 31%;
+  }
+  .dark {
+    --background: 240 12% 2.5%;
+    --foreground: 0 0% 95%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 95%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 238 55% 62%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 10% 10%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 240 8% 10%;
+    --muted-foreground: 240 5% 55%;
+    --accent: 238 55% 62%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 10% 12%;
+    --input: 240 10% 12%;
+    --ring: 238 55% 62%;
+    --chart-1: 238 60% 55%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 10% 4%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 238 55% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 10% 10%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 10% 12%;
+    --sidebar-ring: 238 55% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Ensure fill-forwards for animations */
+.animate-fade-up,
+.animate-fade-in,
+.animate-slide-in-right,
+.animate-scale-in {
+  opacity: 0;
+}
+
+/* Selection styling */
+.dark ::selection {
+  background-color: hsl(238 55% 62% / 0.25);
+  color: hsl(230 25% 98%);
+}
+
+::selection {
+  background-color: hsl(238 50% 31% / 0.15);
+  color: hsl(238 50% 10%);
+}
+
+/* Premium scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(240 10% 18%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(238 20% 25%);
+}
+
+/* Glass card shimmer effect on hover */
+.glass-card {
+  position: relative;
+  overflow: hidden;
+}
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(101,104,214,0.15), transparent 50%, rgba(101,104,214,0.08));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+/* Noise texture overlay */
+.noise-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
