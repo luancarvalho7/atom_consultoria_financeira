@@ -35,11 +35,11 @@ export function CTA() {
                 </p>
               </div>
 
-              <div className="max-w-md mx-auto">
+              <div className="w-full max-w-md mx-auto px-2 sm:px-0">
                 <a href={ctaUrl} className="block">
-                  <Button className="w-full bg-white text-black hover:bg-white/90 h-14 px-8 rounded-full font-semibold text-base transition-all hover:scale-105 active:scale-95 shadow-lg shadow-white/10">
+                  <Button className="w-full bg-white text-black hover:bg-white/90 min-h-14 h-auto py-3 px-5 sm:px-8 rounded-full font-semibold text-sm sm:text-base transition-all hover:scale-105 active:scale-95 shadow-lg shadow-white/10 whitespace-normal text-center leading-snug">
                     Quero minha vaga na Consultoria
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                    <ArrowRight className="ml-2 w-4 h-4 flex-shrink-0" />
                   </Button>
                 </a>
                 <p className="text-xs text-white/40 mt-4 leading-relaxed">

@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Search, FileText, Wrench } from 'lucide-react'
+import { ArrowRight, Search, FileText, Wrench, Target } from 'lucide-react'
 import { useCtaUrl } from '@/hooks/use-cta-url'
 
 const steps = [
   {
     number: 1,
-    title: 'Raio-X Financeiro (1:1)',
-    subtitle: '1a Reunião',
+    title: 'Raio X',
+    subtitle: '1a Etapa',
     icon: Search,
     items: [
       'Renda efetiva (fixa e variável)',
@@ -22,28 +22,42 @@ const steps = [
   },
   {
     number: 2,
-    title: 'Plano Personalizado',
-    subtitle: '2a Reunião',
+    title: 'Diagnóstico e Direcionamento',
+    subtitle: '2a Etapa',
     icon: FileText,
     items: [
+      'Análise completa do cenário financeiro',
       'Organização do fluxo financeiro',
       'Redefinição de prioridades',
-      'Direcionamento para investimentos',
-      'Ajustes estruturais necessários',
+      'Direcionamento estratégico personalizado',
     ],
     footer: 'Nada pronto. Nada copiado. Tudo sob medida para o seu cenário específico.',
   },
   {
     number: 3,
-    title: 'Implementação e Ajustes',
-    subtitle: '3a Reunião',
+    title: 'Mais rendimento e menos dívidas',
+    subtitle: '3a Etapa',
     icon: Wrench,
+    items: [
+      'Direcionamento para investimentos',
+      'Estratégias de quitação de dívidas',
+      'Otimização dos rendimentos',
+      'Ajustes estruturais necessários',
+    ],
+    footer: 'Colocamos o seu dinheiro para trabalhar por você de forma inteligente.',
+  },
+  {
+    number: 4,
+    title: 'Consolidação e Próximos passos',
+    subtitle: '4a Etapa',
+    icon: Target,
     items: [
       'Revisamos o que foi aplicado',
       'Corrigimos rotas e ajustamos decisões',
+      'Definição dos próximos objetivos',
       'Estruturamos acompanhamento contínuo*',
     ],
-    footer: 'Colocamos o seu dinheiro para trabalhar por você. *Contratação à parte.',
+    footer: 'Consolidamos resultados e traçamos o caminho para o próximo nível. *Contratação à parte.',
   },
 ]
 
@@ -67,7 +81,7 @@ function StepCard({ step, index }: { step: typeof steps[0], index: number }) {
       className={`group relative transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      <div className="relative h-full bg-white/[0.03] rounded-2xl border border-white/[0.06] p-6 lg:p-8 hover:border-[#6568D6]/25 hover:shadow-xl hover:shadow-[#272A75]/10 transition-all duration-500 hover:-translate-y-1">
+      <div className="relative h-full bg-white/[0.03] rounded-2xl border border-white/[0.06] p-6 hover:border-[#6568D6]/25 hover:shadow-xl hover:shadow-[#272A75]/10 transition-all duration-500 hover:-translate-y-1">
         {/* Number watermark */}
         <div className="absolute top-4 right-5 text-8xl font-heading font-bold text-white/[0.03] group-hover:text-[#6568D6]/8 transition-colors select-none">
           {step.number}
@@ -127,7 +141,7 @@ export function BabySteps() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {steps.map((step, index) => (
             <StepCard key={step.number} step={step} index={index} />
           ))}

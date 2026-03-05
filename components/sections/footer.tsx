@@ -1,14 +1,3 @@
-const footerSections = [
-  {
-    title: 'Empresa',
-    links: ['Sobre', 'Carreiras', 'Contato', 'Sala de Imprensa'],
-  },
-  {
-    title: 'Legal',
-    links: ['Política de Privacidade', 'Termos de Uso', 'Acessibilidade'],
-  },
-]
-
 export function Footer() {
   return (
     <footer className="bg-black text-white relative overflow-hidden">
@@ -16,60 +5,44 @@ export function Footer() {
       <div className="h-px bg-gradient-to-r from-transparent via-[#6568D6]/20 to-transparent" />
 
       <div className="container mx-auto px-4 lg:px-8 py-16 lg:py-20">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
-          {/* Brand */}
-          <div className="lg:col-span-2 space-y-5">
-            <div className="flex items-center gap-2.5">
-              <img 
-                src="/atom_logo.webp" 
-                alt="Atom Logo"
-                className="h-8 w-auto"
-              />
-              <span className="font-heading font-bold text-lg tracking-tight">Atom Educacional</span>
-            </div>
-            <p className="text-white/40 text-sm leading-relaxed max-w-sm">
-              Consultoria financeira personalizada para quem ganha bem e quer fazer o dinheiro trabalhar no nível da sua carreira.
-            </p>
-            <div className="flex items-center gap-2">
-              {['f', 'X', 'in', 'yt'].map((icon) => (
-                <a
-                  key={icon}
-                  href="#"
-                  className="w-9 h-9 rounded-full bg-white/[0.04] hover:bg-white/[0.08] flex items-center justify-center transition-colors border border-white/[0.06] hover:border-white/[0.1]"
-                >
-                  <span className="text-xs font-bold text-white/60 hover:text-white/90 transition-colors">{icon}</span>
-                </a>
-              ))}
-            </div>
+        {/* Brand & Tagline */}
+        <div className="space-y-3 mb-10">
+          <div className="flex items-center gap-2.5">
+            <img
+              src="/atom_logo.webp"
+              alt="Atom Logo"
+              className="h-8 w-auto"
+            />
+            <span className="font-heading font-bold text-lg tracking-tight">Atom Consultoria</span>
           </div>
-
-          {/* Links */}
-          {footerSections.map((section) => (
-            <div key={section.title} className="space-y-4">
-              <h5 className="text-sm font-semibold text-white/80 uppercase tracking-wider">{section.title}</h5>
-              <ul className="space-y-3">
-                {section.links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-sm text-white/40 hover:text-white/80 transition-colors">
-                      {link}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <p className="text-white/50 text-sm leading-relaxed">
+            Transformando vidas através da educação financeira
+          </p>
         </div>
 
-        {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/[0.05] flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-white/30">
-            {'© 2026 Atom Educacional. Todos os direitos reservados.'}
+        {/* Contact */}
+        <div className="mb-10">
+          <h5 className="text-sm font-semibold text-white/80 uppercase tracking-wider mb-3">ATOM CONSULTORIA FINANCEIRA</h5>
+          <p className="text-sm text-white/50">
+            Telefone: (15) 3031-6100 | E-mail: contato@atomconsultoriafinanceira.com.br
           </p>
-          <div className="flex items-center gap-6 text-xs text-white/30">
-            <a href="#" className="hover:text-white/60 transition-colors">Termos</a>
-            <a href="#" className="hover:text-white/60 transition-colors">Privacidade</a>
-            <a href="#" className="hover:text-white/60 transition-colors">Cookies</a>
-          </div>
+        </div>
+
+        {/* Description */}
+        <div className="space-y-5 mb-10">
+          <p className="text-sm text-white/40 leading-relaxed">
+            A Atom Consultoria oferece serviços de planejamento financeiro pessoal e educação financeira com foco em organização de finanças, quitação de dívidas e construção de patrimônio. Nossos consultores são especializados em auxiliar pessoas físicas a alcançarem seus objetivos financeiros através de planos personalizados e acompanhamento contínuo.
+          </p>
+          <p className="text-sm text-white/40 leading-relaxed">
+            Nossa metodologia é baseada em diagnóstico financeiro completo, permitindo que nossos clientes tenham uma visão clara de sua situação atual e possam tomar decisões conscientes sobre seu futuro financeiro. Realizamos consultorias individualizadas com recursos educacionais, ferramentas de controle e suporte especializado de acordo com a necessidade de cada cliente.
+          </p>
+        </div>
+
+        {/* Legal Disclaimer */}
+        <div className="pt-8 border-t border-white/[0.05]">
+          <p className="text-xs text-white/30 leading-relaxed">
+            Aviso Legal: As informações apresentadas constituem orientações educacionais sobre planejamento financeiro pessoal. Não oferecemos recomendações específicas de investimentos em valores mobiliários. Para investimentos em ações, fundos e outros instrumentos financeiros, recomendamos consultar instituições devidamente autorizadas pela CVM (Comissão de Valores Mobiliários). Os resultados apresentados são exemplos reais de clientes, mas não garantem resultados futuros, pois cada situação financeira é única. Rentabilidade passada não é garantia de rentabilidade futura.
+          </p>
         </div>
       </div>
     </footer>

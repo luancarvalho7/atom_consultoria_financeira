@@ -56,7 +56,10 @@ export function Tools() {
             <span className="text-sm font-semibold text-foreground/70">Ferramentas Poderosas</span>
           </div>
           <h3 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground tracking-tight text-balance mb-6">
-            O que realmente oferecemos
+            O que realmente{' '}
+            <span className="bg-gradient-to-r from-[#6568D6] via-[#9092E8] to-[#BCBEF5] bg-clip-text text-transparent">
+              oferecemos
+            </span>
           </h3>
           <p className="text-lg text-muted-foreground leading-relaxed text-pretty max-w-2xl mx-auto">
             {"A chance de organizar de vez o seu dinheiro como todo profissional bem-sucedido faz. De educação a consultoria personalizada, temos as ferramentas certas para você."}

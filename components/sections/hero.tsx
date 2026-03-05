@@ -164,12 +164,13 @@ export function Hero() {
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-foreground leading-[1.05] tracking-tight animate-fade-up animation-delay-200">
-              {'Você evoluiu. O seu dinheiro precisa '}
+              {'Você '}
               <span className="relative">
                 <span className="bg-gradient-to-r from-[#6568D6] via-[#9092E8] to-[#BCBEF5] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x">
-                  acompanhar.
+                  evoluiu.
                 </span>
               </span>
+              {' O seu dinheiro precisa acompanhar.'}
             </h2>
 
             <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed text-pretty animate-fade-up animation-delay-400">
