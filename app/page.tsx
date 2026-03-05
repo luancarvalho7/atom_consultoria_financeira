@@ -1,5 +1,3 @@
-'use client'
-
 import { Header } from '@/components/sections/header'
 import { Hero } from '@/components/sections/hero'
 import { Stats } from '@/components/sections/stats'

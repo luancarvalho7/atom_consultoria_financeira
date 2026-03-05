@@ -99,12 +99,14 @@
   }
 }
 
-/* Ensure fill-forwards for animations */
-.animate-fade-up,
-.animate-fade-in,
-.animate-slide-in-right,
-.animate-scale-in {
-  opacity: 0;
+/* Ensure fill-forwards for animations — only hide if device supports/prefers animations */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-slide-in-right,
+  .animate-scale-in {
+    opacity: 0;
+  }
 }
 
 /* Selection styling */
@@ -167,4 +169,72 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
+}
+
+/* Marquee scroll animation (moved out of styled-jsx for better iOS compat) */
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+/* ── Mobile performance optimisations ── */
+
+/* Disable noise overlay on mobile — saves a full-viewport GPU layer */
+@media (max-width: 768px) {
+  .noise-overlay::after {
+    display: none;
+  }
+}
+
+/* Disable looping decorative animations on mobile to free up GPU */
+@media (max-width: 768px) {
+  .animate-float,
+  .animate-glow-pulse,
+  .animate-gradient-x {
+    animation: none !important;
+  }
+  /* Keep gradient text readable when animation is off */
+  .animate-gradient-x {
+    background-position: 0% 50% !important;
+  }
+}
+
+/* Reduce motion: never hide content, skip all transitions */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-slide-in-right,
+  .animate-scale-in,
+  .animate-float,
+  .animate-glow-pulse,
+  .animate-gradient-x {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Hide blur orbs on small screens — they cause GPU compositing layers */
+@media (max-width: 768px) {
+  [class*="blur-["] {
+    display: none;
+  }
+}
+
+/* iOS smooth scroll & momentum */
+html {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* iPhone X safe-area padding for bottom floating button */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }
