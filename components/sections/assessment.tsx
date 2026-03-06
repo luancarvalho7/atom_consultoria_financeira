@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react'
-import { useCtaUrl } from '@/hooks/use-cta-url'
 
 const painPoints = [
   'Não sabe exatamente quanto sobra no final do mês',
@@ -23,7 +22,6 @@ const benefits = [
 export function Assessment() {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
-  const ctaUrl = useCtaUrl()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -116,7 +114,7 @@ export function Assessment() {
             <p className="text-lg text-muted-foreground mb-6 font-medium">
               {'Seu dinheiro começa a trabalhar no nível da sua carreira.'}
             </p>
-            <a href={ctaUrl}>
+            <a href="#contato">
               <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-[#272A75] to-[#6568D6] hover:from-[#20235D] hover:to-[#5558C0] text-white h-14 px-6 sm:px-10 text-sm sm:text-base font-semibold rounded-full transition-all hover:shadow-xl hover:shadow-[#272A75]/30 hover:scale-[1.02] active:scale-[0.98] border border-white/10 whitespace-normal leading-tight">
                 Quero conquistar maturidade financeira
                 <ArrowRight className="ml-2 w-4 h-4" />

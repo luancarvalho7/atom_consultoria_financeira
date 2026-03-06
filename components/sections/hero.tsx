@@ -4,7 +4,6 @@ import React from "react"
 
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Sparkles } from 'lucide-react'
-import { useCtaUrl } from '@/hooks/use-cta-url'
 
 function GridPattern() {
   return (
@@ -147,7 +146,6 @@ function DashboardMockup() {
 }
 
 export function Hero() {
-  const ctaUrl = useCtaUrl()
   return (
     <section className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden bg-background">
       <GridPattern />
@@ -178,7 +176,7 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-600">
-              <a href={ctaUrl}>
+              <a href="#contato">
                 <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-[#272A75] to-[#6568D6] hover:from-[#20235D] hover:to-[#5558C0] text-white h-14 px-8 text-sm sm:text-base font-semibold rounded-full transition-all hover:shadow-xl hover:shadow-[#272A75]/30 hover:scale-[1.02] active:scale-[0.98] border border-white/10">
                   {'Quero meu raio-x financeiro'}
                   <ArrowRight className="ml-2 w-4 h-4" />

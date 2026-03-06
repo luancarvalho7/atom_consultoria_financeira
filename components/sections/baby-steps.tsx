@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Search, FileText, Wrench, Target } from 'lucide-react'
-import { useCtaUrl } from '@/hooks/use-cta-url'
 
 const steps = [
   {
@@ -121,7 +120,6 @@ function StepCard({ step, index }: { step: typeof steps[0], index: number }) {
 }
 
 export function BabySteps() {
-  const ctaUrl = useCtaUrl()
   return (
     <section className="py-24 lg:py-32 bg-background relative overflow-hidden">
       {/* Dramatic glow */}
@@ -148,7 +146,7 @@ export function BabySteps() {
         </div>
 
         <div className="text-center mt-12 lg:mt-16">
-          <a href={ctaUrl}>
+          <a href="#contato">
             <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-[#272A75] to-[#6568D6] hover:from-[#20235D] hover:to-[#5558C0] text-white h-14 px-6 sm:px-10 text-sm sm:text-base font-semibold rounded-full transition-all hover:shadow-xl hover:shadow-[#272A75]/30 hover:scale-[1.02] active:scale-[0.98] border border-white/10">
               Quero garantir a consultoria
               <ArrowRight className="ml-2 w-4 h-4" />

@@ -2,10 +2,8 @@
 
 import { Button } from '@/components/ui/button'
 import { ArrowRight } from 'lucide-react'
-import { useCtaUrl } from '@/hooks/use-cta-url'
 
 export function CTA() {
-  const ctaUrl = useCtaUrl()
   return (
     <section className="pt-24 lg:pt-32 pb-12 lg:pb-16 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
@@ -36,7 +34,7 @@ export function CTA() {
               </div>
 
               <div className="w-full max-w-md mx-auto px-2 sm:px-0">
-                <a href={ctaUrl} className="block">
+                <a href="#contato" className="block">
                   <Button className="w-full bg-white text-black hover:bg-white/90 min-h-14 h-auto py-3 px-5 sm:px-8 rounded-full font-semibold text-sm sm:text-base transition-all hover:scale-105 active:scale-95 shadow-lg shadow-white/10 whitespace-normal text-center leading-snug">
                     Quero minha vaga na Consultoria
                     <ArrowRight className="ml-2 w-4 h-4 flex-shrink-0" />

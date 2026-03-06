@@ -238,3 +238,62 @@ html {
     padding-bottom: env(safe-area-inset-bottom);
   }
 }
+
+/* HubSpot form overrides — branco no fundo escuro */
+#hubspot-form-container .hs-form label,
+#hubspot-form-container .hs-form .hs-field-desc,
+#hubspot-form-container .hs-form legend {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+}
+
+#hubspot-form-container .hs-form input[type="text"],
+#hubspot-form-container .hs-form input[type="email"],
+#hubspot-form-container .hs-form input[type="tel"],
+#hubspot-form-container .hs-form input[type="number"],
+#hubspot-form-container .hs-form select,
+#hubspot-form-container .hs-form textarea {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 0.75rem !important;
+  padding: 0.625rem 0.875rem !important;
+  width: 100% !important;
+  transition: border-color 0.2s !important;
+}
+
+#hubspot-form-container .hs-form input:focus,
+#hubspot-form-container .hs-form select:focus,
+#hubspot-form-container .hs-form textarea:focus {
+  border-color: rgba(101, 104, 214, 0.6) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(101, 104, 214, 0.15) !important;
+}
+
+#hubspot-form-container .hs-form input::placeholder,
+#hubspot-form-container .hs-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35) !important;
+}
+
+#hubspot-form-container .hs-form .hs-error-msgs label {
+  color: #f87171 !important;
+  font-size: 0.75rem !important;
+}
+
+#hubspot-form-container .hs-form .hs-button {
+  background: linear-gradient(to right, #272A75, #6568D6) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 0.75rem 2rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  width: 100% !important;
+  transition: opacity 0.2s !important;
+}
+
+#hubspot-form-container .hs-form .hs-button:hover {
+  opacity: 0.9 !important;
+}
+

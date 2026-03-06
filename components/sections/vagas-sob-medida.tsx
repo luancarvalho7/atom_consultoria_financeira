@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, Clock, Calendar, Sparkles, Check, Lock } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { useCtaUrl } from '@/hooks/use-cta-url'
 
 const slots = [
   { label: 'Diagnóstico', status: 'taken' },
@@ -26,7 +25,6 @@ const included = [
 export function VagasSobMedida() {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
-  const ctaUrl = useCtaUrl()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -203,7 +201,7 @@ export function VagasSobMedida() {
                 </div>
 
                 {/* CTA */}
-                <a href={ctaUrl} className="block">
+                <a href="#contato" className="block">
                   <Button
                     size="lg"
                     className="w-full h-14 bg-white hover:bg-white/90 text-black font-heading font-bold text-base rounded-2xl transition-all hover:shadow-2xl hover:shadow-white/10 hover:scale-[1.02] active:scale-[0.98] group"

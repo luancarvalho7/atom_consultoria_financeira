@@ -10,6 +10,7 @@ import { VagasSobMedida } from '@/components/sections/vagas-sob-medida'
 import { Testimonials } from '@/components/sections/testimonials'
 import { FAQ } from '@/components/sections/faq'
 import { CTA } from '@/components/sections/cta'
+import { HubSpotForm } from '@/components/sections/hubspot-form'
 import { Footer } from '@/components/sections/footer'
 import { FloatingCTA } from '@/components/sections/floating-cta'
 
@@ -34,6 +35,7 @@ export default function Page() {
         <Testimonials />
         <FAQ />
         <CTA />
+        <HubSpotForm />
         {/* Fade: dark background → pure black */}
         <div className="h-24 bg-gradient-to-b from-background to-black" />
       </main>
