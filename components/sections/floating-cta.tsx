@@ -23,8 +23,8 @@ export function FloatingCTA() {
           : 'translate-y-20 opacity-0 pointer-events-none'
       }`}
     >
-      <span className="hidden sm:inline">Quero minha consultoria</span>
-      <span className="sm:hidden">Começar</span>
+      <span className="hidden sm:inline">Falar com um consultor</span>
+      <span className="sm:hidden">Falar com um consultor</span>
       <ArrowRight className="w-4 h-4" />
     </a>
   )

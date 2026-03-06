@@ -68,10 +68,10 @@ export function HubSpotForm() {
                   <span className="text-white/80 text-sm font-medium">Garanta sua vaga</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-heading font-bold text-white tracking-tight">
-                  Preencha o formulário
+                  Fale agora com um consultor da Atom
                 </h2>
                 <p className="text-white/60 leading-relaxed">
-                  Nossa equipe entrará em contato para entender sua situação e dar os próximos passos.
+                  Preencha seus dados para agendar uma reunião com nosso time de consultores financeiros.
                 </p>
               </div>
 

@@ -36,7 +36,7 @@ function AnimatedNumber({ target, suffix = '' }: { target: number, suffix?: stri
 const stats = [
   { value: 10, suffix: '+', label: 'Anos de Experiência', sublabel: 'em consultoria financeira' },
   { value: 2, suffix: 'M+', label: 'Vidas Transformadas', sublabel: 'em todo o Brasil' },
-  { value: 3, suffix: '', label: 'Reuniões Estruturadas', sublabel: 'diagnóstico, plano e ação' },
+  { value: 4, suffix: '', label: 'Reuniões Estruturadas', sublabel: 'diagnóstico, plano e ação' },
 ]
 
 export function Stats() {
