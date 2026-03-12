@@ -46,7 +46,7 @@ export function Assessment() {
               <span className="text-sm font-semibold text-[#BCBEF5]">Diagnóstico</span>
             </div>
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground tracking-tight text-balance mb-6 leading-tight">
-              {'Renda de CEO com organização de estagiário '}
+              {'Ganhar bem e ainda viver sem clareza financeira '}
               <span className="bg-gradient-to-r from-[#9092E8] to-[#BCBEF5] bg-clip-text text-transparent">
                 {'não combina.'}
               </span>
